@@ -1,0 +1,21 @@
+HOW TO RUN — HR Attrition Analytics
+====================================
+
+Option 1 (easiest):
+    ./run.sh
+
+Option 2 (step by step):
+    1. Install dependencies:   pip install -r requirements.txt
+    2. Run analytics + train:  python3 src/main.py
+       (7 charts, 2 models compared, executive summary)
+    3. Launch the dashboard:   streamlit run dashboard/app.py
+       Then open http://localhost:8501; try the sidebar filters and
+       the "Employee attrition risk scorer" form.
+
+Outputs:
+    reports/plots/                  7 interactive charts
+    reports/model_comparison.csv    model metrics
+    reports/executive_summary.md    findings + HR recommendations
+    models/attrition_model.joblib   best model bundle
+
+Stop the dashboard with Ctrl+C.
