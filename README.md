@@ -22,3 +22,7 @@ Analytics dataset (1,470 employees, 31 usable attributes).
 ```bash
 ./run.sh        # or see torun.txt
 ```
+
+## Recent upgrades
+- **Cost-based threshold**: the flag/no-flag cut-off minimises expected dollar cost (missed leaver vs. needless intervention) instead of the arbitrary 0.5 — saves ~$2.4M vs. doing nothing on the test set (`reports/cost_threshold_curve`).
+- **SHAP explanations**: per-employee driver breakdown in the dashboard (TreeExplainer / LinearExplainer depending on the best model) so each flag comes with a 'why'.
