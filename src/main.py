@@ -117,7 +117,6 @@ def plot_cost_curve(tune: dict) -> None:
                     name="expected cost")
     fig.add_vline(x=tune["threshold"], line_dash="dash", line_color="red",
                   annotation_text=f"optimal {tune['threshold']:.2f}")
-    fig.add_hline(y=0.5 * 0, line_width=0)
     fig.update_layout(title="Expected dollar cost vs. decision threshold",
                       xaxis_title="flag-if-probability ≥ threshold",
                       yaxis_title="expected cost ($)")
