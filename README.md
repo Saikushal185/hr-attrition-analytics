@@ -26,3 +26,32 @@ Analytics dataset (1,470 employees, 31 usable attributes).
 ## Recent upgrades
 - **Cost-based threshold**: the flag/no-flag cut-off minimises expected dollar cost (missed leaver vs. needless intervention) instead of the arbitrary 0.5 — saves ~$2.4M vs. doing nothing on the test set (`reports/cost_threshold_curve`).
 - **SHAP explanations**: per-employee driver breakdown in the dashboard (TreeExplainer / LinearExplainer depending on the best model) so each flag comes with a 'why'.
+
+## Development
+
+```bash
+make install   # install dev dependencies
+make test      # run tests
+make lint      # lint with ruff
+```
+
+## Docker
+
+```bash
+docker build -t hr-attrition .
+docker run -p 8501:8501 hr-attrition
+```
+
+## REST API
+
+```bash
+uvicorn src.api:app --reload
+# POST /score with an employee JSON returns attrition probability and flag
+```
+
+## CLI
+
+```bash
+python -m src.cli segments   # top attrition segments
+python -m src.cli analyse    # full pipeline
+```
